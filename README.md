@@ -9,6 +9,7 @@ Dual Core Extension for (https://github.com/elec-tra/RISC_V_Processor)
 <!-- prettier-ignore-start -->
 
 - [Rachit Garg](https://github.com/rstar900)
+- [Saranyan Palaniappan](https://github.com/elec-tra)
 
 ## Results
 Mandelbrot program running on a Dual core RISC-V processor
