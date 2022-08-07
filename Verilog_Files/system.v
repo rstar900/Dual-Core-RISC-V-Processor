@@ -93,42 +93,7 @@ module system(
     wire [4 : 0] irq_id;
     wire irq_ack;
 	wire [4 : 0] irq_ack_id;
-
-    // FIXME
-//    wire irq_c1;
-//    wire [4 : 0] irq_id_c1;
-//    wire irq_ack_c1;
-//    wire [4 : 0] irq_ack_id_c1;
-//    wire irq_c2;
-//    wire [4 : 0] irq_id_c2;
-//    wire irq_ack_c2;
-//    wire [4 : 0] irq_ack_id_c2;
     
-//    reg handling_irq_c1;
-//    reg handling_irq_c2;
-//    assign irq = irq_c1 || irq_c2;
-//    always @ (CLK) begin
-//        if (RES) begin
-//            handling_irq_c1 <= 1'b0;
-//            handling_irq_c2 <= 1'b0;
-//        end
-//        else begin
-//            if (irq_c1) begin
-//                handling_irq_c1 <= 1'b1;
-//                handling_irq_c2 <= 1'b0;
-//            end 
-//            else if (irq_ack_c1) handling_irq_c1 <= 1'b0;
-//            else if (irq_ack_c2) handling_irq_c2 <= 1'b0;
-//            else if (handling_irq_c1) handling_irq_c1 <= 1'b1;
-//            else if (handling_irq_c2) handling_irq_c2 <= 1'b1;
-//        end
-//    end
-    
-//    assign irq_ack = irq_ack_c1 || irq_ack_c2;
-//    assign irq_id_c1 = handling_irq_c1 ? irq_id : 'b0;
-//    assign irq_id_c2 = handling_irq_c2 ? irq_id : 'b0;
-//    assign irq_ack_id = handling_irq_c1 ? irq_ack_id_c1 :
-//                        handling_irq_c2 ? irq_ack_id_c2 : 'b0;
    
 pulpus psoc(
 /* BOARD SIGNALS */
@@ -342,18 +307,6 @@ end
 always
 #5 clk=~clk;
 
-/*initial
-    begin  
-        button_array = 4'b0000;
-        repeat(125) begin
-            @(negedge CLK);
-        end
-        button_array = 4'b0001;
-        repeat(2) begin
-            @(negedge CLK);
-        end
-        button_array = 4'b0000;
-    end*/
 `else
 always @(BOARD_CLK)
 clk=BOARD_CLK;
